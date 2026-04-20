@@ -1,0 +1,58 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.6.2
+2 info using node@v24.13.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\ADMIN\Downloads\ordnary-projects\ordnary.auth-sdk\.npmrc
+5 silly config load:file:C:\Users\ADMIN\.npmrc
+6 silly config load:file:C:\Users\ADMIN\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm publish
+8 verbose argv "publish" "--access" "public" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:C:\Users\ADMIN\Downloads\ordnary-projects\ordnary.auth-sdk\.npm-cache\_logs\2026-04-20T11_34_18_525Z-
+10 verbose logfile C:\Users\ADMIN\Downloads\ordnary-projects\ordnary.auth-sdk\.npm-cache\_logs\2026-04-20T11_34_18_525Z-debug-0.log
+11 silly logfile done cleaning log files
+12 verbose publish [ '.' ]
+13 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+14 notice
+15 notice package: @ordnary/auth-sdk@0.1.0
+16 notice Tarball Contents
+17 notice 1.8kB README.md
+17 notice 2.3kB index.d.ts
+17 notice 8.4kB index.js
+17 notice 659B package.json
+18 notice Tarball Details
+19 notice name: @ordnary/auth-sdk
+20 notice version: 0.1.0
+21 notice filename: ordnary-auth-sdk-0.1.0.tgz
+22 notice package size: 3.9 kB
+23 notice unpacked size: 13.2 kB
+24 notice shasum: 5d61415a457a186104211e5519c87cf888a2cd90
+25 notice integrity: sha512-3vWu/5PhO5rG5[...]Hjjje9NCMes2Q==
+26 notice total files: 4
+27 notice
+28 http fetch GET 404 https://registry.npmjs.org/@ordnary%2fauth-sdk 674ms (cache skip)
+29 http fetch GET 404 https://registry.npmjs.org/@ordnary%2fauth-sdk 226ms (cache skip)
+30 notice Publishing to https://registry.npmjs.org/ with tag latest and public access
+31 http fetch PUT 401 https://registry.npmjs.org/@ordnary%2fauth-sdk 358ms
+32 verbose stack HttpErrorAuthOTP: OTP required for authentication
+32 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-fetch\lib\check-response.js:84:17
+32 verbose stack     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+32 verbose stack     at async publish (C:\Program Files\nodejs\node_modules\npm\node_modules\libnpmpublish\lib\publish.js:53:15)
+32 verbose stack     at async otplease (C:\Program Files\nodejs\node_modules\npm\lib\utils\auth.js:8:12)
+32 verbose stack     at async #publish (C:\Program Files\nodejs\node_modules\npm\lib\commands\publish.js:188:7)
+32 verbose stack     at async Publish.exec (C:\Program Files\nodejs\node_modules\npm\lib\commands\publish.js:47:5)
+32 verbose stack     at async Npm.exec (C:\Program Files\nodejs\node_modules\npm\lib\npm.js:208:9)
+32 verbose stack     at async module.exports (C:\Program Files\nodejs\node_modules\npm\lib\cli\entry.js:67:5)
+33 verbose statusCode 401
+34 verbose pkgid @ordnary/auth-sdk@0.1.0
+35 error code EOTP
+36 error This operation requires a one-time password from your authenticator.
+37 error You can provide a one-time password by passing --otp=<code> to the command you ran.
+37 error If you already provided a one-time password then it is likely that you either typoed
+37 error it, or it timed out. Please try again.
+38 verbose cwd C:\Users\ADMIN\Downloads\ordnary-projects\ordnary.auth-sdk
+39 verbose os Windows_NT 10.0.19045
+40 verbose node v24.13.0
+41 verbose npm  v11.6.2
+42 verbose exit 1
+43 verbose code 1
+44 error A complete log of this run can be found in: C:\Users\ADMIN\Downloads\ordnary-projects\ordnary.auth-sdk\.npm-cache\_logs\2026-04-20T11_34_18_525Z-debug-0.log

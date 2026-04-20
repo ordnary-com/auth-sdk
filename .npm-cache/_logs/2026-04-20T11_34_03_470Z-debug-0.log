@@ -1,0 +1,37 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.6.2
+2 info using node@v24.13.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\ADMIN\Downloads\ordnary-projects\ordnary.auth-sdk\.npmrc
+5 silly config load:file:C:\Users\ADMIN\.npmrc
+6 silly config load:file:C:\Users\ADMIN\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm pack
+8 verbose argv "pack" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:C:\Users\ADMIN\Downloads\ordnary-projects\ordnary.auth-sdk\.npm-cache\_logs\2026-04-20T11_34_03_470Z-
+10 verbose logfile C:\Users\ADMIN\Downloads\ordnary-projects\ordnary.auth-sdk\.npm-cache\_logs\2026-04-20T11_34_03_470Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with EACCES
+14 notice
+15 notice package: @ordnary/auth-sdk@0.1.0
+16 notice Tarball Contents
+17 notice 1.8kB README.md
+17 notice 2.3kB index.d.ts
+17 notice 8.4kB index.js
+17 notice 659B package.json
+18 notice Tarball Details
+19 notice name: @ordnary/auth-sdk
+20 notice version: 0.1.0
+21 notice filename: ordnary-auth-sdk-0.1.0.tgz
+22 notice package size: 3.9 kB
+23 notice unpacked size: 13.2 kB
+24 notice shasum: 5d61415a457a186104211e5519c87cf888a2cd90
+25 notice integrity: sha512-3vWu/5PhO5rG5[...]Hjjje9NCMes2Q==
+26 notice total files: 4
+27 notice
+28 verbose cwd C:\Users\ADMIN\Downloads\ordnary-projects\ordnary.auth-sdk
+29 verbose os Windows_NT 10.0.19045
+30 verbose node v24.13.0
+31 verbose npm  v11.6.2
+32 verbose exit 0
+33 info ok

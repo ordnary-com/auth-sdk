@@ -1,0 +1,37 @@
+{
+  "name": "@ordnary/auth-sdk",
+  "version": "0.1.0",
+  "description": "Next.js auth helpers for Ordnary OAuth integration",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "default": "./index.js"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md"
+  ],
+  "keywords": [
+    "ordnary",
+    "oauth",
+    "oidc",
+    "nextjs",
+    "auth",
+    "auth-sdk"
+  ],
+  "peerDependencies": {
+    "next": ">=16",
+    "react": ">=19",
+    "react-dom": ">=19"
+  },
+  "license": "MIT"
+}
