@@ -1,20 +1,20 @@
 # `@ordnary/auth-sdk`
 
-Kleine Next.js server-side package om `ordnary.accounts` als OAuth/OIDC provider te koppelen.
+Small Next.js server-side package for integrating `ordnary.accounts` as an OAuth/OIDC provider.
 
 ## Install
 
 ```bash
-npm install @ordnary/auth
+npm install @ordnary/auth-sdk
 ```
 
-Voor lokale ontwikkeling in deze workspace kun je ook gebruiken:
+For local development inside this workspace, you can also install it from the folder directly:
 
 ```bash
-npm install ../ordnary.auth
+npm install ../ordnary.auth-sdk
 ```
 
-## Config
+## Configuration
 
 ```ts
 import { createOrdnaryAuth } from "@ordnary/auth-sdk";
@@ -32,7 +32,7 @@ export const ordnaryAuth = createOrdnaryAuth({
 });
 ```
 
-## Next.js route handlers
+## Next.js Route Handlers
 
 ```ts
 // app/api/auth/login/route.ts
@@ -61,23 +61,23 @@ export async function GET(request: Request) {
 }
 ```
 
-## Session usage
+## Session Usage
 
 ```ts
 const session = await ordnaryAuth.readSession();
 ```
 
-Of hard redirecten als login vereist is:
+Or force a redirect when authentication is required:
 
 ```ts
 const session = await ordnaryAuth.requireSession("/");
 ```
 
-## Wat de package afhandelt
+## What This Package Handles
 
-- PKCE + state + nonce generatie
-- signed httpOnly cookies voor loginstate en sessie
-- redirect naar `/oauth/authorize`
-- code exchange via `/api/oauth/token`
-- userinfo-ophaal via `/api/oauth/userinfo`
+- PKCE, state, and nonce generation
+- signed `httpOnly` cookies for login state and session storage
+- redirecting to `/oauth/authorize`
+- authorization code exchange through `/api/oauth/token`
+- user profile retrieval through `/api/oauth/userinfo`
 - logout cleanup
