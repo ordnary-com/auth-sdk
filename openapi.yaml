@@ -1,0 +1,141 @@
+openapi: 3.0.3
+info:
+  title: Ordnary Auth API (OIDC)
+  description: OpenID Connect based authentication API for Ordnary accounts.
+  version: 1.0.0
+servers:
+  - url: /
+    description: Identity Provider Base URL
+
+paths:
+  /authorize:
+    get:
+      summary: OAuth2 Authorize Endpoint
+      description: Redirects the user to the login page to start the authentication flow.
+      parameters:
+        - name: client_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: response_type
+          in: query
+          required: true
+          schema:
+            type: string
+            example: code
+        - name: redirect_uri
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: scope
+          in: query
+          schema:
+            type: string
+        - name: state
+          in: query
+          schema:
+            type: string
+        - name: code_challenge
+          in: query
+          schema:
+            type: string
+        - name: code_challenge_method
+          in: query
+          schema:
+            type: string
+            example: S256
+      responses:
+        '302':
+          description: Redirect to login or callback
+
+  /token:
+    post:
+      summary: OAuth2 Token Endpoint
+      description: Exchanges an authorization code for access and ID tokens.
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [grant_type, client_id, code, redirect_uri]
+              properties:
+                grant_type:
+                  type: string
+                  example: authorization_code
+                client_id:
+                  type: string
+                code:
+                  type: string
+                redirect_uri:
+                  type: string
+                code_verifier:
+                  type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+
+  /userinfo:
+    get:
+      summary: OIDC UserInfo Endpoint
+      description: Returns identity information about the authenticated user.
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrdnaryUser'
+
+components:
+  schemas:
+    OrdnaryUser:
+      type: object
+      required: [sub]
+      properties:
+        sub:
+          type: string
+          description: Unique user identifier
+        name:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        email_verified:
+          type: boolean
+        picture:
+          type: string
+          nullable: true
+        locale:
+          type: string
+          nullable: true
+
+    TokenResponse:
+      type: object
+      required: [access_token, token_type, expires_in]
+      properties:
+        access_token:
+          type: string
+        id_token:
+          type: string
+        refresh_token:
+          type: string
+        token_type:
+          type: string
+          example: Bearer
+        expires_in:
+          type: integer
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
